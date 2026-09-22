@@ -1,6 +1,6 @@
 # Mahakrenov Web - Setup Environment
 
-## Cara Jalankan Project (Khusus Contributor/Frontend)
+## Cara Jalankan Project
 
 1. **Clone repository & siapkan file environment:**
    ```bash
