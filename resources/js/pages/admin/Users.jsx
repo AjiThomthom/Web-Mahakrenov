@@ -1,0 +1,2 @@
+import React,{useEffect,useState} from 'react';import {api} from '../../services/api';
+export default function Users(){const [users,setUsers]=useState([]);useEffect(()=>{api('/admin/users').then(d=>setUsers(d.users))},[]);return <div className="card"><h2>Pengguna</h2><table><thead><tr><th>Nama</th><th>Email</th><th>Role</th><th>Bergabung</th></tr></thead><tbody>{users.map(u=><tr key={u.id}><td>{u.name}</td><td>{u.email}</td><td>{u.role}</td><td>{u.created_at?.slice(0,10)}</td></tr>)}</tbody></table></div>}

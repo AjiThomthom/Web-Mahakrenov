@@ -1,0 +1,3 @@
+import React,{useEffect,useState} from 'react';
+import {api} from '../../services/api';
+export default function ContentList({type}){const [items,setItems]=useState([]);const [error,setError]=useState('');useEffect(()=>{api(`/content/${type}`).then(d=>setItems(d.items)).catch(e=>setError(e.message))},[type]);return <><h1>{type==='gallery'?'Galeri Mahakrenov':'Berita Mahakrenov'}</h1>{error&&<p className="error">{error}</p>}<div className="grid">{items.map(x=><article className="card" key={x.id}>{x.image_path&&<img src={x.image_path} alt="" style={{width:'100%',maxHeight:220,objectFit:'cover',borderRadius:8}}/>}<h3>{x.title}</h3><p>{x.description||x.body}</p><small className="muted">{x.created_at?.slice(0,10)}</small></article>)}</div></>}
