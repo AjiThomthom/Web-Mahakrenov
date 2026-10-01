@@ -1,0 +1,2 @@
+import React,{useEffect,useState} from 'react';import {api} from '../../services/api';
+export default function Reports(){const [r,setR]=useState(null);useEffect(()=>{api('/admin/reports').then(d=>setR(d.report))},[]);if(!r)return <p>Memuat laporan...</p>;return <div className="stack"><h2>Laporan Pendaftaran</h2><div className="grid">{Object.entries(r).map(([k,v])=><div className="card" key={k}><p className="muted">{k}</p><h2>{v}</h2></div>)}</div><button className="btn" onClick={()=>window.print()}>Cetak / Simpan PDF</button></div>}

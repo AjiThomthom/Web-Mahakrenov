@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-gray-800 bg-white antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-teal-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-teal-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-teal-600;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
