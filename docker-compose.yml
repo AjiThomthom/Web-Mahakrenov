@@ -26,7 +26,7 @@ services:
       - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
     networks:
       - network
-      - proxy_network
+ #     - proxy_network
 
   db:
     image: postgres:17-alpine
@@ -44,8 +44,8 @@ services:
       - network
 
 networks:
-  proxy_network:
-    external: true
+#  proxy_network:
+#    external: true
   network:
     driver: bridge
 
